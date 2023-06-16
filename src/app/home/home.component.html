@@ -1,0 +1,174 @@
+<!-- <h1>Hello, world!</h1>
+<p>Welcome to your new single-page application, built with:</p>
+<ul>
+  <li><a href='https://get.asp.net/'>ASP.NET Core</a> and <a href='https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx'>C#</a> for cross-platform server-side code</li>
+  <li><a href='https://angular.io/'>Angular</a> and <a href='http://www.typescriptlang.org/'>TypeScript</a> for client-side code</li>
+  <li><a href='http://getbootstrap.com/'>Bootstrap</a> for layout and styling</li>
+</ul>
+<p>To help you get started, we've also set up:</p>
+<ul>
+  <li><strong>Client-side navigation</strong>. For example, click <em>Counter</em> then <em>Back</em> to return here.</li>
+  <li><strong>Angular CLI integration</strong>. In development mode, there's no need to run <code>ng serve</code>. It runs in the background automatically, so your client-side resources are dynamically built on demand and the page refreshes when you modify any file.</li>
+  <li><strong>Efficient production builds</strong>. In production mode, development-time features are disabled, and your <code>dotnet publish</code> configuration automatically invokes <code>ng build</code> to produce minified, ahead-of-time compiled JavaScript files.</li>
+</ul>
+<p>The <code>ClientApp</code> subdirectory is a standard Angular CLI application. If you open a command prompt in that directory, you can run any <code>ng</code> command (e.g., <code>ng test</code>), or use <code>npm</code> to install extra packages into it.</p>
+
+-->
+<!--
+
+<div class="row" style="width:500px">
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Workforce management</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Time management</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Workforce Analytics</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Employee Self-service</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<button type="button" (click)="HRIS()" class="btn btn-primary">HRIS</button>
+<button type="button" (click)="Payroll()" class="btn btn-secondary">Payroll</button>
+
+<ng-container *ngIf="show">
+    <div id="HRIS" class="d-flex flex-column">
+
+
+
+        <div class="card" style="width: 18rem;">
+            <div class="card-header">
+                Featured
+            </div>
+            <ul class="list-group list-group-flush" *ngFor="let item of listArray; index as i">
+
+                <li class="list-group-item" (click)="ModuleDetails(i)">{{item}}</li>
+
+            </ul>
+        </div>
+
+        <ng-container *ngIf="showmodules">
+            {{currenthris.description}}.
+
+        
+            <div class="card w-75">
+                <div class="card-header">
+                    Prerequisites
+                </div>
+                <ul class="list-group list-group-flush" *ngFor="let item3 of currenthris.requirements; index as i">
+
+                    <li class="list-group-item">{{i+1}} - {{item3.description}}</li>
+
+                </ul>
+            </div>
+
+            <b>Available modules</b>
+
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Description</th>
+
+                        <th scope="col">Steps</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item2 of displayArray; index as i">
+                        <th scope="row">{{item2.name}} </th>
+
+                        <td>{{item2.description}}</td>
+
+                        <td><button class="tabopen" (click)="StepDetails(i)">Steps</button></td>
+
+                    </tr>
+                </tbody>
+            </table>
+
+
+        </ng-container>
+
+        <ng-container *ngIf="showsteps">
+
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Owner </th>
+                        <th scope="col">System</th>
+                        <th scope="col">Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item3 of stepArray;index as i">
+                        <th scope="row">{{i+1}} </th>
+
+                        <td>{{item3.description}}</td>
+                        <td>{{item3.owner}}</td>
+                        <td>
+                            {{item3.system}}
+                        </td>
+                        <td><button class="tabopen" (click)="detailsForStep(i)" data-bs-toggle="modal" data-bs-target="#stepDetailsModal">Details</button></td>
+                       
+
+
+                    </tr>
+                </tbody>
+            </table>
+        </ng-container>
+
+    </div>
+</ng-container>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="stepDetailsModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <ng-container *ngIf="showstepsdetails">
+                {{currentStep.details}}<br/><br />
+
+                                            <u>More details {{currentStep.link}}</u>
+                                        </ng-container>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,211 @@
+﻿[
+  {
+    "name": "EC",
+    "description": "This is EC",
+
+    "link": "This is a link",
+    "requirements": [
+      {
+        "description": "LCC configuration, pay group configuration ready",
+        "link": "Link A"
+
+      },
+      {
+        "description": "Client has SAP Cloud Platform (CPI) license",
+        "link": "Link B"
+      }
+    ],
+    "modules": [
+      {
+        "name": "Masterdata name",
+        "link": "Masterdata link",
+        "description": "Supplemental changes every 15 min",
+
+        "prereq": [ { "description": "some text for MD" } ],
+        "steps": [
+          {
+            "step": "1",
+            "description": "Configure EC integration user",
+            "link": "link step 1",
+            "owner": "EC implementator",
+            "system": "EC",
+            "duration": 10,
+            "details": "Create API user for connecting CPI to EC"
+          },
+
+          {
+            "step": "1",
+            "description": "Create WM user",
+            "link": "link step 1",
+            "owner": "APPS",
+            "system": "Exchange",
+            "duration": 10,
+            "details": "Create WM user via asaddads  "
+          },
+          {
+            "step": "2",
+            "description": "Implement CPI package",
+            "link": "link step 2",
+            "duration": 10,
+            "owner": "EC implementor",
+            "system": "CPI",
+            "details": "Additional details go here"
+          },
+          {
+            "step": "3",
+            "description": "Configure value mapping in Customer Config",
+            "link": "link step 2",
+            "duration": 10,
+            "owner": "APPS",
+            "system": "Exchange",
+            "details": "Create LCC_ID, Company Code, OrganizationID etc. See chapter "
+          },
+          {
+            "step": "4",
+            "description": "Send one employee",
+            "link": "link step 2",
+            "duration": 10,
+            "owner": "APPS",
+            "system": "Exchange",
+            "details": "Additional details go here"
+          }
+
+        ]
+      },
+      {
+        "name": "Event driven integration",
+        "link": "Masterdata link",
+        "description": "Enables hires and terminations in real-time",
+        "prereq": [ { "description": "some text for MD" } ],
+        "steps": [
+          {
+            "step": "1",
+            "description": "Step 1 desc",
+            "link": "link step 1",
+            "owner": "Alight step 1",
+            "duration": 10,
+            "system": ""
+          },
+          {
+            "step": "2",
+            "description": "Step 2 desc",
+            "link": "link step 2",
+            "duration": 10,
+            "owner": "Alight step 2",
+            "system": ""
+          }
+
+        ]
+      }
+
+    ]
+
+
+  },
+  {
+    "name": "WD",
+    "description": "This is EC",
+
+    "link": "This is a link",
+    "requirements": [
+      {
+        "description": "LCC configuration, pay group configuration ready",
+        "link": "Link A"
+
+      },
+      {
+        "description": "Client has SAP Cloud Platform (CPI) license",
+        "link": "Link B"
+      }
+    ],
+    "modules": [
+      {
+        "name": "Masterdata name",
+        "link": "Masterdata link",
+        "description": "Supplemental changes every 15 min",
+
+        "prereq": [ { "description": "some text for MD" } ],
+        "steps": [
+          {
+            "step": "1",
+            "description": "Configure EC integration user",
+            "link": "link step 1",
+            "owner": "EC implementator",
+            "system": "EC",
+            "duration": 10,
+            "details": "Create API user for connecting CPI to EC"
+          },
+
+          {
+            "step": "1",
+            "description": "Create WM user",
+            "link": "link step 1",
+            "owner": "APPS",
+            "system": "Exchange",
+            "duration": 10,
+            "details": "Create WM user via asaddads  "
+          },
+          {
+            "step": "2",
+            "description": "Implement CPI package",
+            "link": "link step 2",
+            "duration": 10,
+            "owner": "EC implementor",
+            "system": "CPI",
+            "details": "Additional details go here"
+          },
+          {
+            "step": "3",
+            "description": "Configure value mapping in Customer Config",
+            "link": "link step 2",
+            "duration": 10,
+            "owner": "APPS",
+            "system": "Exchange",
+            "details": "Create LCC_ID, Company Code, OrganizationID etc. See chapter "
+          },
+          {
+            "step": "4",
+            "description": "Send one employee",
+            "link": "link step 2",
+            "duration": 10,
+            "owner": "APPS",
+            "system": "Exchange",
+            "details": "Additional details go here"
+          }
+
+        ]
+      },
+      {
+        "name": "Event driven integration (EDI)",
+        "link": "Masterdata link",
+        "description": "Enables hires and terminations in real-time",
+        "prereq": [ { "description": "some text for MD" } ],
+        "steps": [
+          {
+            "step": "1",
+            "description": "Step 1 desc",
+            "link": "link step 1",
+            "owner": "Alight step 1",
+            "duration": 10,
+            "system": ""
+          },
+          {
+            "step": "2",
+            "description": "Step 2 desc",
+            "link": "link step 2",
+            "duration": 10,
+            "owner": "Alight step 2",
+            "system": ""
+          }
+
+        ]
+      }
+
+    ]
+
+
+  }
+
+
+
+]
