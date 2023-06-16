@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { steps } from './home.types';
 import { prereq } from './home.types';
 import { modConfig } from './home.types';
-import * as jsonData from './home.config.json';
+import jsonData from './home.config.json';
 
 
 
@@ -32,7 +32,8 @@ export class HomeComponent implements OnInit {
   public currenthris: any ;
   public currentmodule: any;
   public currentStep: any;
-  public listArray: any
+  public listArray: any;
+  public org: any;
 
   ngOnInit() {
 
@@ -41,7 +42,7 @@ export class HomeComponent implements OnInit {
   constructor() {
 
     const personArray = jsonData as HRISData[];
-    
+    this.org = personArray;
 
     this.HRISConfig = personArray;
 
@@ -51,7 +52,7 @@ export class HomeComponent implements OnInit {
   public HRIS() {
 
     this.listArray = [];
-    for (let entry of this.HRISConfig) {
+    for (let entry of this.org) {
    
       this.listArray.push(entry.name);
    }
